@@ -63,10 +63,13 @@ class MainActivity : AppCompatActivity() {
             {
                 answer.setText("This Triangle is Isosceles!")
             }
-
+            else if ((num3_3 == num1_1) && (num3_3 == num2_2))
+            {
+                answer.setText("This Triangle is Equilateral")
+            }
             else
             {
-                answer.setText("This Triangle is NOT Scalene and it is NOT Isosceles!")
+                answer.setText("This Triangle is NOT Scalene, Isosceles, or Equilateral!")
             }
 
         }

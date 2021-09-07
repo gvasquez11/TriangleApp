@@ -35,16 +35,16 @@ class MainActivity : AppCompatActivity() {
 
             if(num1_1 != num2_2 && num1_1 != num3_3 && num2_2 != num3_3)
             {
-                answer.setText("This Triangle is Scalene!")
+                answer.setText("[" + UserInputString + "] = scalene")
             }
             else if(((num1_1 == num2_2) || (num1_1 == num3_3) || (num2_2 == num3_3)) &&
                 ((num1_1 != num2_2) || (num1_1 != num3_3) || (num2_2 != num3_3)))
             {
-                answer.setText("[" + UserInputString + "]: This Triangle is Isosceles!")
+                answer.setText("[" + UserInputString + "] = isosceles")
             }
             else if ((num3_3 == num1_1) && (num3_3 == num2_2))
             {
-                answer.setText("This Triangle is Equilateral")
+                answer.setText("[" + UserInputString + "] = equilateral")
             }
             else
             {

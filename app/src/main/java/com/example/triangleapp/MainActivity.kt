@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
             }
             catch (e: ClassCastException)
             {
-                Toast.makeText(applicationContext, "No input detected, must enter 3 numbers separated by comma.  Example: 15, 23, 27", Toast.LENGTH_LONG).show();
+                Toast.makeText(applicationContext, "Invalid input detected, must enter 3 numbers separated by comma.  Example: 15, 23, 27", Toast.LENGTH_LONG).show();
             }
 
             //val UserInputArray = UserInputString.split(',').toTypedArray();

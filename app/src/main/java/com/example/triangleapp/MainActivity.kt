@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import java.lang.NumberFormatException
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,15 +20,12 @@ class MainActivity : AppCompatActivity() {
         val analyzeAnswer = findViewById(R.id.AnalyzeButton) as Button;
 
         analyzeAnswer.setOnClickListener{
-
-            //val num1_1 = num1.text.toString();
-            //val num2_2 = num2.text.toString().toInt();
-            //val num3_3 = num3.text.toString().toInt();
             var UserInputString: String = " ";
             var UserInputArray = ArrayList<String>();
             var num1_1: Double = 1.0;
             var num2_2: Double = 1.0;
             var num3_3: Double = 1.0;
+
             try
             {
                 UserInputString = inputValue.text.toString();
@@ -39,7 +37,6 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(applicationContext, "Invalid input detected, must enter 3 numbers separated by comma.  Example: 15, 23, 27", Toast.LENGTH_LONG).show();
             }
 
-            //val UserInputArray = UserInputString.split(',').toTypedArray();
 
             try
             {
@@ -76,6 +73,10 @@ class MainActivity : AppCompatActivity() {
                 {
                     Toast.makeText(applicationContext, "Less than 3 sides detected.  Must enter 3 numbers separted by comma.  Example: 15, 23, 27", Toast.LENGTH_LONG).show();
                 }
+            }
+            catch(e:NumberFormatException)
+            {
+                Toast.makeText(applicationContext, "Number Format Exception, multiple points or missing comma", Toast.LENGTH_LONG).show();
             }
         }
     }

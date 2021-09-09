@@ -121,9 +121,7 @@ class MainActivity : AppCompatActivity() {
 
         for (i in values.indices )
         {
-            if(values[i].toInt() == 0)
-                finish();
-            else if(values[i].toDouble() < 1.0){
+            if(values[i].toDouble() < 1.0){
                 Toast.makeText(applicationContext, "Value Out of Range, Must be greater or equal to 1.0", Toast.LENGTH_LONG).show();
                 return false;
                 break;

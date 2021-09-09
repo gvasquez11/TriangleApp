@@ -24,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         var num2_2: Double = 1.0;
         var num3_3: Double = 1.0;
         var limits: Boolean = true;
+        var OutputStr1: String = " ";
 
         analyzeAnswer.setOnClickListener{
 
@@ -44,30 +45,39 @@ class MainActivity : AppCompatActivity() {
             {
                 if(UserInputArray.size > 3)
                 {
-                    Toast.makeText(applicationContext, "More than 3 sides detected.  Must enter 3 numbers separted by comma.  Example: 15, 23, 27", Toast.LENGTH_LONG).show();
+                    Toast.makeText(applicationContext, "More than 3 sides detected.  Must enter 3 numbers separated by comma.  Example: 15, 23, 27", Toast.LENGTH_LONG).show();
                 }
                 else {
                     num1_1 = UserInputArray[0].toDouble();
                     num2_2 = UserInputArray[1].toDouble();
                     num3_3 = UserInputArray[2].toDouble();
                     limits = inLimits(UserInputArray);
+                    OutputStr1 = "[" + UserInputArray[0].trim() +", " + UserInputArray[1].trim()+ ", "+ UserInputArray[2].trim() + "] = ";
                     if(limits){
-                        if(num1_1 != num2_2 && num1_1 != num3_3 && num2_2 != num3_3)
+                        if ((num1_1 + num2_2 < num3_3) ||
+                                (num1_1 + num3_3 < num2_2) ||
+                                (num2_2 + num3_3 < num1_1))
                         {
-                            answer.setText("[" + UserInputString + "] = scalene")
+                            Toast.makeText(applicationContext, "The three values entered can't make a triangle due to the Triangle Inequality Theorem", Toast.LENGTH_LONG).show();
+
+                        }
+
+                        else if(num1_1 != num2_2 && num1_1 != num3_3 && num2_2 != num3_3)
+                        {
+                            answer.setText(OutputStr1 + "scalene")
                         }
                         else if(((num1_1 == num2_2) || (num1_1 == num3_3) || (num2_2 == num3_3)) &&
                             ((num1_1 != num2_2) || (num1_1 != num3_3) || (num2_2 != num3_3)))
                         {
-                            answer.setText("[" + UserInputString + "] = isosceles")
+                            answer.setText(OutputStr1 + "isosceles")
                         }
                         else if ((num3_3 == num1_1) && (num3_3 == num2_2))
                         {
-                            answer.setText("[" + UserInputString + "] = equilateral")
+                            answer.setText(OutputStr1 + "equilateral")
                         }
                         else
                         {
-                            answer.setText("This Triangle is NOT Scalene, Isosceles, or Equilateral!")
+                            answer.setText("If our logic is correct, this error is mathematically impossible to occur.")
                         }
                     }
                 }
@@ -76,7 +86,7 @@ class MainActivity : AppCompatActivity() {
             {
                 if(UserInputArray.size < 3)
                 {
-                    Toast.makeText(applicationContext, "Less than 3 sides detected.  Must enter 3 numbers separted by comma.  Example: 15, 23, 27", Toast.LENGTH_LONG).show();
+                    Toast.makeText(applicationContext, "Less than 3 sides detected.  Must enter 3 numbers separated by comma.  Example: 15, 23, 27", Toast.LENGTH_LONG).show();
                 }
             }
             catch(e:NumberFormatException)

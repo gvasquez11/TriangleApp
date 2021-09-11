@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         analyzeAnswer.setOnClickListener {
+            answer.setText("")
 
             if (inputValue.text.toString() == "0") {
                 builder.show()

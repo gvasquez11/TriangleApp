@@ -20,9 +20,10 @@
     <TextView
         android:id="@+id/Result"
         android:layout_width="268dp"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:layout_marginBottom="40dp"
         android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"

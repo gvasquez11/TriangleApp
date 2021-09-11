@@ -6,64 +6,79 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="108dp"
         android:text="Triangle App"
+        app:layout_constraintBottom_toTopOf="@+id/UserInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.931" />
 
     <TextView
         android:id="@+id/Result"
         android:layout_width="268dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="40dp"
         android:gravity="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/UserInput"
+        app:layout_constraintVertical_bias="0.152" />
 
     <EditText
         android:id="@+id/UserInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="48dp"
         android:digits="0123456789,. "
         android:ems="10"
         android:gravity="right"
         android:inputType="numberDecimal"
         android:text=""
-        app:layout_constraintBottom_toTopOf="@+id/Result"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.584" />
 
     <Button
         android:id="@+id/AnalyzeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="52dp"
+        android:layout_marginBottom="120dp"
         android:text="Analyze"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button2"
-        app:layout_constraintHorizontal_bias="0.586"
+        app:layout_constraintHorizontal_bias="0.604"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="52dp"
+        android:layout_marginBottom="120dp"
         android:text="Exit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.733"
+        app:layout_constraintHorizontal_bias="0.758"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="173dp"
+        android:layout_height="199dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.537"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.238"
+        app:srcCompat="@drawable/triangle" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

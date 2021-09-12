@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
         informationButton.setOnClickListener{
             Toast.makeText(applicationContext, "The goal of the application is to determine if the three inputted values " +
                     "are either an equilateral, scaling, or isosceles. Please enter 3 values that range from 1.0 to 100.0 separated by a comma." +
-                    "Enter 0 or press the 'Exit' button to exit the app",Toast.LENGTH_SHORT).show();
+                    "Enter 0 or press the 'Exit' button to exit the app",Toast.LENGTH_LONG).show();
         }
 
         analyzeAnswer.setOnClickListener {

@@ -9,9 +9,10 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Triangle App"
+        android:layout_width="365dp"
+        android:layout_height="34dp"
+        android:gravity="center"
+        android:text="Please enter in three sides each for a,b,c in the range from 1.0 to 100.0"
         app:layout_constraintBottom_toTopOf="@+id/UserInput"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,13 +40,15 @@
         android:ems="10"
         android:gravity="right"
         android:inputType="numberDecimal"
+        android:minHeight="48dp"
         android:text=""
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.584" />
+        app:layout_constraintVertical_bias="0.584"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/AnalyzeButton"
@@ -80,5 +83,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.238"
         app:srcCompat="@drawable/triangle" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="43dp"
+        android:layout_height="46dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.904"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.407"
+        app:srcCompat="@drawable/ic_information" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

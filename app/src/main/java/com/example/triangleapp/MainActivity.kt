@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         val inputValue = findViewById(R.id.UserInput) as EditText;
         val answer = findViewById(R.id.Result) as TextView;
         val analyzeAnswer = findViewById(R.id.AnalyzeButton) as Button;
+        val informationButton = findViewById(R.id.imageView) as ImageView;
         val exitB = findViewById(R.id.button2) as Button;
         var UserInputString: String = " ";
         var UserInputArray = ArrayList<String>();
@@ -34,6 +35,12 @@ class MainActivity : AppCompatActivity() {
 
         exitB.setOnClickListener{
             builder.show()
+        }
+
+        informationButton.setOnClickListener{
+            Toast.makeText(applicationContext, "The goal of the application is to determine if the three inputted values " +
+                    "are either an equilateral, scaling, or isosceles. Please enter 3 values that range from 1.0 to 100.0 separated by a comma." +
+                    "Enter 0 or press the 'Exit' button to exit the app")
         }
 
         analyzeAnswer.setOnClickListener {
